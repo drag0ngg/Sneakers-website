@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <title>Document</title>
+</head>
+<body>
+  <nav>
+    <p class="logo">sneakers</p>
+    <div class="nav-main">
+      <div class="nav-li">
+        <ul style="list-style: none;">
+          <li>Collections</li>
+          <li>Men</li>
+          <li>Women</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+      <div class="nav-right">
+          <svg xmlns="http://www.w3.org/2000/svg" class="cart" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <circle cx="6" cy="19" r="2"></circle>
+            <circle cx="17" cy="19" r="2"></circle>
+            <path d="M17 17h-11v-14h-2"></path>
+            <path d="M6 5l14 1l-1 7h-13"></path>
+          </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="avatar" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+          <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
+       </svg>
+      </div>
+    </div>
+  </nav>
+  <div class="main-content">
+    <div class="main-images">
+      <img src="https://i0.wp.com/justfreshkicks.com/wp-content/uploads/2019/02/Travis-Scott-Air-Jordan-1.jpg?ssl=1" class="main-img" alt="img">
+      <div class="other-images">
+        <img src="https://i0.wp.com/justfreshkicks.com/wp-content/uploads/2019/02/Travis-Scott-Air-Jordan-1.jpg?ssl=1" class="other-img1" alt="img">
+        <img src="https://i0.wp.com/justfreshkicks.com/wp-content/uploads/2019/02/Travis-Scott-Air-Jordan-1.jpg?ssl=1" class="other-img2" alt="img">
+        <img src="https://i0.wp.com/justfreshkicks.com/wp-content/uploads/2019/02/Travis-Scott-Air-Jordan-1.jpg?ssl=1" class="other-img3" alt="img">
+        <img src="https://i0.wp.com/justfreshkicks.com/wp-content/uploads/2019/02/Travis-Scott-Air-Jordan-1.jpg?ssl=1" class="other-img4" alt="img">
+      </div>
+    </div>
+    <div class="main-caption">
+      <p class="company">sneaker company</p>
+      <h1 class="thing-name">Air Jordan 1 High 'Travis Scott'</h1>
+      <p class="thing-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae totam voluptates debitis rem, illo excepturi. Ipsam vel eaque inventore fuga sint perspiciatis vitae omnis fugiat velit, autem ipsum. Provident, magni.</p>
+      <div class="price-container">
+        <p class="price">$125.00</p>
+        <p class="discount">50%</p>
+      </div>
+      <p class="last-price">$250.00</p>
+      <div class="add-to-cart">
+        <button onclick="noClick()" class="minus">-</button>
+        <p id="clicks" class="count">0</p>
+        <button onclick="onClick()" class="plus">+</button>
+        <button class="add"><span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="second-cart" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <circle cx="6" cy="19" r="2"></circle>
+            <circle cx="17" cy="19" r="2"></circle>
+            <path d="M17 17h-11v-14h-2"></path>
+            <path d="M6 5l14 1l-1 7h-13"></path>
+          </svg>
+        </span>Add to cart</button>
+      </div>
+    </div>
+  </div>
+  <div class="second-content">
+    <h2 class="second-company">sneaker company</h2>
+    <p class="about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi similique cum aliquam assumenda corrupti laboriosam, dolore ipsa dicta explicabo non harum molestias aliquid fuga optio sit doloribus. Possimus quis iste voluptatum deserunt debitis inventore, voluptas assumenda repellendus eveniet animi molestias fugit dolorem eius nihil? Dignissimos tenetur vel magnam nulla nihil!</p>
+  </div>
+</body>
+<script>
+  var clicks = 0;
+  function onClick() {
+  clicks += 1;
+  document.getElementById("clicks").innerHTML = clicks;
+};
+  function noClick() {
+    if(clicks == 0){
+      
+    }
+    else {
+      clicks -= 1;
+      document.getElementById("clicks").innerHTML = clicks;
+    }
+}
+
+ScrollReveal().reveal('.main-caption');
+
+ScrollReveal({
+  reset: false,
+  distance: '60px',
+  duration: 2500,
+  delay: 400
+});
+
+ScrollReveal().reveal('.company', { delay: 400, origin: 'top' });
+ScrollReveal().reveal('.thing-name', { delay: 100, origin: 'top' });
+ScrollReveal().reveal('.thing-description', { delay: 300, origin: 'top' });
+ScrollReveal().reveal('.price', { delay: 900, origin: 'top' });
+ScrollReveal().reveal('.discount', { delay: 600, origin: 'bottom' });
+ScrollReveal().reveal('.last-price', { delay: 700, origin: 'right' });
+ScrollReveal().reveal('.minus', { delay: 100, origin: 'right' });
+ScrollReveal().reveal('.plus', { delay: 100, origin: 'left' });
+ScrollReveal().reveal('.main-img', { delay: 100, origin: 'left' });
+ScrollReveal().reveal('.other-img1', { delay: 200, origin: 'bottom' });
+ScrollReveal().reveal('.other-img2', { delay: 300, origin: 'bottom' });
+ScrollReveal().reveal('.other-img3', { delay: 400, origin: 'bottom' });
+ScrollReveal().reveal('.other-img4', { delay: 500, origin: 'bottom' });
+ScrollReveal().reveal('.count', { delay: 500, origin: 'bottom' });
+ScrollReveal().reveal('.second-company', { delay: 100, origin: 'top' });
+ScrollReveal().reveal('.add', { delay: 500, origin: 'right' });
+ScrollReveal().reveal('.about', { delay: 200, origin: 'bottom' });
+</script>
+</html>
